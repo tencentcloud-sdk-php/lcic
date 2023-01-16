@@ -20,17 +20,41 @@ use TencentCloud\Common\AbstractModel;
 /**
  * DescribeAppDetail返回参数结构体
  *
+ * @method string getSdkAppId() 获取SdkAppId 
+ * @method void setSdkAppId(string $SdkAppId) 设置SdkAppId 
+ * @method AppConfig getAppConfig() 获取应用配置
+ * @method void setAppConfig(AppConfig $AppConfig) 设置应用配置
+ * @method array getSceneConfig() 获取场景配置
+ * @method void setSceneConfig(array $SceneConfig) 设置场景配置
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
 class DescribeAppDetailResponse extends AbstractModel
 {
     /**
+     * @var string SdkAppId 
+     */
+    public $SdkAppId;
+
+    /**
+     * @var AppConfig 应用配置
+     */
+    public $AppConfig;
+
+    /**
+     * @var array 场景配置
+     */
+    public $SceneConfig;
+
+    /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     public $RequestId;
 
     /**
+     * @param string $SdkAppId SdkAppId 
+     * @param AppConfig $AppConfig 应用配置
+     * @param array $SceneConfig 场景配置
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -46,6 +70,24 @@ class DescribeAppDetailResponse extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("SdkAppId",$param) and $param["SdkAppId"] !== null) {
+            $this->SdkAppId = $param["SdkAppId"];
+        }
+
+        if (array_key_exists("AppConfig",$param) and $param["AppConfig"] !== null) {
+            $this->AppConfig = new AppConfig();
+            $this->AppConfig->deserialize($param["AppConfig"]);
+        }
+
+        if (array_key_exists("SceneConfig",$param) and $param["SceneConfig"] !== null) {
+            $this->SceneConfig = [];
+            foreach ($param["SceneConfig"] as $key => $value){
+                $obj = new SceneItem();
+                $obj->deserialize($value);
+                array_push($this->SceneConfig, $obj);
+            }
+        }
+
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
             $this->RequestId = $param["RequestId"];
         }
