@@ -20,8 +20,8 @@ use TencentCloud\Common\AbstractModel;
 /**
  * DescribeAppDetail返回参数结构体
  *
- * @method string getSdkAppId() 获取SdkAppId 
- * @method void setSdkAppId(string $SdkAppId) 设置SdkAppId 
+ * @method string getSdkAppId() 获取SDK 对应的AppId 
+ * @method void setSdkAppId(string $SdkAppId) 设置SDK 对应的AppId 
  * @method AppConfig getAppConfig() 获取应用配置
  * @method void setAppConfig(AppConfig $AppConfig) 设置应用配置
  * @method array getSceneConfig() 获取场景配置
@@ -32,7 +32,7 @@ use TencentCloud\Common\AbstractModel;
 class DescribeAppDetailResponse extends AbstractModel
 {
     /**
-     * @var string SdkAppId 
+     * @var string SDK 对应的AppId 
      */
     public $SdkAppId;
 
@@ -52,7 +52,7 @@ class DescribeAppDetailResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $SdkAppId SdkAppId 
+     * @param string $SdkAppId SDK 对应的AppId 
      * @param AppConfig $AppConfig 应用配置
      * @param array $SceneConfig 场景配置
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
