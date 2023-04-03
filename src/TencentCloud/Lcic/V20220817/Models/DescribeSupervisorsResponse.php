@@ -18,19 +18,40 @@ namespace TencentCloud\Lcic\V20220817\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeDeveloper返回参数结构体
+ * DescribeSupervisors返回参数结构体
  *
- * @method string getDeveloperId() 获取服务商ID
- * @method void setDeveloperId(string $DeveloperId) 设置服务商ID
+ * @method integer getTotal() 获取数据总量
+ * @method void setTotal(integer $Total) 设置数据总量
+ * @method integer getPage() 获取分页查询当前页数
+ * @method void setPage(integer $Page) 设置分页查询当前页数
+ * @method integer getLimit() 获取当前页数据量
+ * @method void setLimit(integer $Limit) 设置当前页数据量
+ * @method array getUserIds() 获取巡课列表
+ * @method void setUserIds(array $UserIds) 设置巡课列表
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeDeveloperResponse extends AbstractModel
+class DescribeSupervisorsResponse extends AbstractModel
 {
     /**
-     * @var string 服务商ID
+     * @var integer 数据总量
      */
-    public $DeveloperId;
+    public $Total;
+
+    /**
+     * @var integer 分页查询当前页数
+     */
+    public $Page;
+
+    /**
+     * @var integer 当前页数据量
+     */
+    public $Limit;
+
+    /**
+     * @var array 巡课列表
+     */
+    public $UserIds;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +59,10 @@ class DescribeDeveloperResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $DeveloperId 服务商ID
+     * @param integer $Total 数据总量
+     * @param integer $Page 分页查询当前页数
+     * @param integer $Limit 当前页数据量
+     * @param array $UserIds 巡课列表
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +78,20 @@ class DescribeDeveloperResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("DeveloperId",$param) and $param["DeveloperId"] !== null) {
-            $this->DeveloperId = $param["DeveloperId"];
+        if (array_key_exists("Total",$param) and $param["Total"] !== null) {
+            $this->Total = $param["Total"];
+        }
+
+        if (array_key_exists("Page",$param) and $param["Page"] !== null) {
+            $this->Page = $param["Page"];
+        }
+
+        if (array_key_exists("Limit",$param) and $param["Limit"] !== null) {
+            $this->Limit = $param["Limit"];
+        }
+
+        if (array_key_exists("UserIds",$param) and $param["UserIds"] !== null) {
+            $this->UserIds = $param["UserIds"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
