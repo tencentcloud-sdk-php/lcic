@@ -22,8 +22,8 @@ use TencentCloud\Common\AbstractModel;
  *
  * @method string getUserId() 获取用户Id。
  * @method void setUserId(string $UserId) 设置用户Id。
- * @method string getToken() 获取登录/注册成功后返回登录态token。有效期7天。
- * @method void setToken(string $Token) 设置登录/注册成功后返回登录态token。有效期7天。
+ * @method string getToken() 获取注册成功后返回登录态token，有效期7天。token过期后可以通过调用“登录”或“源账号登录”进行更新。
+ * @method void setToken(string $Token) 设置注册成功后返回登录态token，有效期7天。token过期后可以通过调用“登录”或“源账号登录”进行更新。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
@@ -35,7 +35,7 @@ class LoginUserResponse extends AbstractModel
     public $UserId;
 
     /**
-     * @var string 登录/注册成功后返回登录态token。有效期7天。
+     * @var string 注册成功后返回登录态token，有效期7天。token过期后可以通过调用“登录”或“源账号登录”进行更新。
      */
     public $Token;
 
@@ -46,7 +46,7 @@ class LoginUserResponse extends AbstractModel
 
     /**
      * @param string $UserId 用户Id。
-     * @param string $Token 登录/注册成功后返回登录态token。有效期7天。
+     * @param string $Token 注册成功后返回登录态token，有效期7天。token过期后可以通过调用“登录”或“源账号登录”进行更新。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
