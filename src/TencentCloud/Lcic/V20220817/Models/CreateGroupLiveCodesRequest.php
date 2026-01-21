@@ -18,28 +18,36 @@ namespace TencentCloud\Lcic\V20220817\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateRoom返回参数结构体
+ * CreateGroupLiveCodes请求参数结构体
  *
+ * @method integer getSdkAppId() 获取<p>低代码互动课堂的SdkAppId。</p>
+ * @method void setSdkAppId(integer $SdkAppId) 设置<p>低代码互动课堂的SdkAppId。</p>
  * @method integer getRoomId() 获取<p>房间ID。</p>
  * @method void setRoomId(integer $RoomId) 设置<p>房间ID。</p>
- * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
- * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
+ * @method integer getNumber() 获取<p>分组数量。注：最大数量限制为30</p>
+ * @method void setNumber(integer $Number) 设置<p>分组数量。注：最大数量限制为30</p>
  */
-class CreateRoomResponse extends AbstractModel
+class CreateGroupLiveCodesRequest extends AbstractModel
 {
+    /**
+     * @var integer <p>低代码互动课堂的SdkAppId。</p>
+     */
+    public $SdkAppId;
+
     /**
      * @var integer <p>房间ID。</p>
      */
     public $RoomId;
 
     /**
-     * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
+     * @var integer <p>分组数量。注：最大数量限制为30</p>
      */
-    public $RequestId;
+    public $Number;
 
     /**
+     * @param integer $SdkAppId <p>低代码互动课堂的SdkAppId。</p>
      * @param integer $RoomId <p>房间ID。</p>
-     * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
+     * @param integer $Number <p>分组数量。注：最大数量限制为30</p>
      */
     function __construct()
     {
@@ -54,12 +62,16 @@ class CreateRoomResponse extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("SdkAppId",$param) and $param["SdkAppId"] !== null) {
+            $this->SdkAppId = $param["SdkAppId"];
+        }
+
         if (array_key_exists("RoomId",$param) and $param["RoomId"] !== null) {
             $this->RoomId = $param["RoomId"];
         }
 
-        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
-            $this->RequestId = $param["RequestId"];
+        if (array_key_exists("Number",$param) and $param["Number"] !== null) {
+            $this->Number = $param["Number"];
         }
     }
 }

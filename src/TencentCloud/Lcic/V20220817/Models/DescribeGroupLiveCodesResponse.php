@@ -18,19 +18,19 @@ namespace TencentCloud\Lcic\V20220817\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateRoom返回参数结构体
+ * DescribeGroupLiveCodes返回参数结构体
  *
- * @method integer getRoomId() 获取<p>房间ID。</p>
- * @method void setRoomId(integer $RoomId) 设置<p>房间ID。</p>
+ * @method array getGroupLiveCodes() 获取<p>分组直播参加码</p>
+ * @method void setGroupLiveCodes(array $GroupLiveCodes) 设置<p>分组直播参加码</p>
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateRoomResponse extends AbstractModel
+class DescribeGroupLiveCodesResponse extends AbstractModel
 {
     /**
-     * @var integer <p>房间ID。</p>
+     * @var array <p>分组直播参加码</p>
      */
-    public $RoomId;
+    public $GroupLiveCodes;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +38,7 @@ class CreateRoomResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param integer $RoomId <p>房间ID。</p>
+     * @param array $GroupLiveCodes <p>分组直播参加码</p>
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +54,8 @@ class CreateRoomResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("RoomId",$param) and $param["RoomId"] !== null) {
-            $this->RoomId = $param["RoomId"];
+        if (array_key_exists("GroupLiveCodes",$param) and $param["GroupLiveCodes"] !== null) {
+            $this->GroupLiveCodes = $param["GroupLiveCodes"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
